@@ -11,6 +11,8 @@
   <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div class="nv">
+    
   {% if user.is_authenticated %}
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
@@ -70,5 +72,6 @@
 
   </nav>
   {% endif %}
+</div>
 </body>
 </html>
