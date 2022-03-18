@@ -24,16 +24,7 @@
     {% block content %}{%endblock%}
 
     {% block scripts %}
-    <script>
-      let counter = document.querySelector('.fa-thumbs-up')
-      let count = 0;
-      counter.addEventListener("click",()=>{
-        counter++;
-        counter.innerHTML = count;
-});
-counter;
- 
-    </script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      {% bootstrap_javascript %}
     {% endblock %}

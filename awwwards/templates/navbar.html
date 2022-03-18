@@ -11,7 +11,7 @@
   <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
-  {% if current_user %}
+  {% if user.is_authenticated %}
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h5><a class="text-white h4" href="/accounts/register/">Register</a></h5>
@@ -40,7 +40,7 @@
     </div>
 
   </nav>
-  {%else%}
+  {% else %}
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h5><a class="text-white h4" href="{%url 'profile'%}">SET UP PROFILE</a></h5>
@@ -69,6 +69,6 @@
     </div>
 
   </nav>
-  {%endif%}
+  {% endif %}
 </body>
 </html>

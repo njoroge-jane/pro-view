@@ -14,9 +14,9 @@ from .serializer import ProfileSerializer, PostSerializer
 
 def index(request):
   posts = Post.objects.all()
-  current_user = request.user
 
-  return render(request,'index.html', {"posts": posts}, {"current_user": current_user})
+
+  return render(request,'index.html', {"posts": posts})
 
 @login_required(login_url='/accounts/login/')
 def upload(request):
