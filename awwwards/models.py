@@ -1,3 +1,4 @@
+from os import link
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -8,6 +9,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='profile_name')
     avatar = models.ImageField(default='default.jpg', upload_to='profile_images')
     bio = models.TextField()
+    contact=models.IntegerField()
 
     def __str__(self):
         return self.user.username  
@@ -24,13 +26,15 @@ class Profile(models.Model):
         return person   
 
 
-class Image(models.Model):
+class Post(models.Model):
     # user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='user')
     title = models.CharField(max_length =60)
-    caption = models.TextField() 
-    pub_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to = 'images/')
-    profile = models.ForeignKey(Profile,on_delete=models.CASCADE) 
+    description = models.TextField() 
+    link = models.CharField(max_length =360)
+
+    pub_date = models.DateTimeField(auto_now_add=True)
+    
   
 
     def save_image(self):
@@ -39,24 +43,5 @@ class Image(models.Model):
     def delete_image(self):
         self.save()  
 
-class Comments(models.Model):
-    comment=models.TextField()
-    image=models.ForeignKey(Image,on_delete=models.CASCADE)
-
-    def save_comment(self):
-        self.save()   
-
-    def delete_comment(self):
-        self.save()                             
-
-class Likes(models.Model):
-    likes=models.IntegerField()
-    image=models.ForeignKey(Image,on_delete=models.CASCADE)
-
-    def save_likes(self):
-        self.save()
-
-    def delete_likes(self):
-        self.save()           
 
 
