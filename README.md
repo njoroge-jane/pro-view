@@ -1,8 +1,9 @@
-  <h3 align="center">INSTA CLONE</h3>
+  <h3 align="center">PRO-VIEW</h3>
 
 <!-- ABOUT THE PROJECT -->
 ## About 
-This project is a clone of the famous instagram app.At the end of the project the user should be able to be authenticated and be able to add images to be viewed by other users as well as they view other users too.
+An application like Awwards.
+ The application will allow a user to post a project he/she has created and get it reviewed by his/her peers.
 
 
 
@@ -33,7 +34,7 @@ pip install -r requirements
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/njoroge_jane/pro-view.git
    ```
 2. Install packages
    ```sh
