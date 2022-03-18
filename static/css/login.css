@@ -1,0 +1,8 @@
+.login{
+  margin-top: 90px;
+}
+.register{
+  background-image: url('/static/images/i1.gif');
+  background-position: left;
+  background-size: cover;
+}
