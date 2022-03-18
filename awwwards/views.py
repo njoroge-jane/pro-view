@@ -3,7 +3,7 @@ from re import U
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm,ProfileForm
-from .models import Post,Profile
+from .models import Post,Profile,User
 from django.core.exceptions import PermissionDenied
 from rest_framework.response import Response
 from rest_framework.views import APIView

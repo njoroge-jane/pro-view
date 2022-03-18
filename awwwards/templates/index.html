@@ -1,9 +1,17 @@
 {% extends "base.html" %}
+{% load static%}
+
+{% load bootstrap5 %}
+<link rel="stylesheet" href="{%static '/static/css/login.css'%}">
+
 {% block content %} 
+<div class="land text-center mt-5">
+  <H3>pOSitVIty</H3>
+</div>
 <div class="container">
-<div class="row">
+<div class="row d-flex m-1">
 {%for post in posts%}
-<div class="col-md-8">
+<div class="col-md-4">
 
 <div class="card mt-5 border" style="box-shadow: 5px 10px lightblue;">
 
