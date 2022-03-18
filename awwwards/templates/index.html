@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %} 
+<div class="container">
+<div class="row">
+{%for image in images%}
+<div class="col-md-8">
+
+<div class="card mt-5 border" style="box-shadow: 5px 10px lightblue;">
+
+  <img class="card-img-top" style="height: 500px;width: 733px;" src="{{image.image.url}}" alt="">
+
+<div class="card-body">
+  <h5 class="card-title">{{image.title}}</h5>
+<p class="card-text">{{image.caption}}</p>
+
+<i class="far fa-thumbs-up">{{count}}</i>
+
+<i class="far fa-thin fa-comment"></i>
+<p class="text-secondary">{{image.pub_date}}</p>
+</div>
+</div>
+</div>
+{%endfor%}
+</div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+{% block title %}Profile Page{% endblock title %}
+{% block content %}
+    <div class="row my-3 p-3">
+        <h1>This is the profile page for {{user.username}}</h1>
+        <form  action="{%url 'profile'%}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+      
+          {% bootstrap_form form %}
+          <input type="submit" class="btn btn-success btn-lg" value="Post">
+        </form>
+    </div>
+
+{% endblock content %}

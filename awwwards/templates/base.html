@@ -1,0 +1,41 @@
+{% load bootstrap5 %}
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Awwwards - {{title}}</title>
+  {% else %}
+    <title> Awwwards </title>
+  {% endif %}
+
+
+  {% block styles %}
+    {% bootstrap_css %}
+    
+  {% endblock %}
+  <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+  {% include "navbar.html" %}
+
+    {% block content %}{%endblock%}
+
+    {% block scripts %}
+    <script>
+      let counter = document.querySelector('.fa-thumbs-up')
+      let count = 0;
+      counter.addEventListener("click",()=>{
+        counter++;
+        counter.innerHTML = count;
+});
+counter;
+ 
+    </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+</html>
