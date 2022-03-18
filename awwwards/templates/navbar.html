@@ -11,7 +11,7 @@
   <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
-  {% if user %}
+  {% if current_user %}
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h5><a class="text-white h4" href="/accounts/register/">Register</a></h5>
