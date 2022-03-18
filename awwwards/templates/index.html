@@ -1,35 +1,30 @@
-{% extends "base.html" %}
-{% load static%}
+{% extends "base.html" %} {% load static%} {% load bootstrap5 %}
+<link rel="stylesheet" href="{%static '/static/css/login.css'%}" />
 
-{% load bootstrap5 %}
-<link rel="stylesheet" href="{%static '/static/css/login.css'%}">
-
-{% block content %} 
+{% block content %}
 <div class="land text-center mt-5">
   <h3>pOSitVIty</h3>
 </div>
 <div class="container">
-<div class="row d-flex m-1">
-  <div class="col-md-4">
-{%for post in posts%}
+  <div class="row d-flex m-1">
+    <div class="col-md-4">
+      {%for post in posts%}
 
+      <div class="card mt-5 border" style="box-shadow: 5px 10px lightblue">
+        <img class="card-img-top img-fluid" src="{{post.image.url}}" alt="" />
 
-<div class="card mt-5 border" style="box-shadow: 5px 10px lightblue;">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.description}}</p>
+          <a href="{{post.link}}">{{post.link}}</a>
 
-  <img class="card-img-top img-fluid"  src="{{post.image.url}}" alt="">
+          <p class="text-secondary">{{post.pub_date}}</p>
+        </div>
+      </div>
 
-<div class="card-body">
-  <h5 class="card-title">{{post.title}}</h5>
-<p class="card-text">{{post.description}}</p>
-<a href="{{post.link}}">{{post.link}}</a>
-
-<p class="text-secondary">{{post.pub_date}}</p>
-</div>
-</div>
-
-{%endfor%}
-</div>
-</div>
+      {%endfor%}
+    </div>
+  </div>
 </div>
 
 {%endblock%}
