@@ -9,6 +9,8 @@ path('', views.index, name='home'),
 path('new/upload', views.upload, name='upload'),
 path('profile/', views.profile, name='profile'),
 path('search/', views.search_results, name='search_results'),
+path('api/project/', views.PostList.as_view()),
+path('api/profile/', views.ProfileList.as_view())
 
 ]
 if settings.DEBUG:
