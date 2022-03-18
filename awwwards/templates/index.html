@@ -6,7 +6,7 @@
 
 {% block content %} 
 <div class="land text-center mt-5">
-  <H3>pOSitVIty</H3>
+  <h3>pOSitVIty</h3>
 </div>
 <div class="container">
 <div class="row d-flex m-1">
@@ -16,12 +16,14 @@
 
 <div class="card mt-5 border" style="box-shadow: 5px 10px lightblue;">
 
-  <img class="card-img-top" style="height: 500px;width: 733px;" src="{{post.image.url}}" alt="">
+  <img class="card-img-top img-fluid" style="height: 500px;width: 733px;" src="{{post.image.url}}" alt="">
 
 <div class="card-body">
   <h5 class="card-title">{{post.title}}</h5>
 <p class="card-text">{{post.description}}</p>
-
+<p>
+  {{post.link}}
+</p>
 
 <p class="text-secondary">{{post.pub_date}}</p>
 </div>
