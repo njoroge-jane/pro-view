@@ -11,6 +11,7 @@
   <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
+  {% if user %}
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h5><a class="text-white h4" href="/accounts/register/">Register</a></h5>
@@ -39,6 +40,35 @@
     </div>
 
   </nav>
+  {%else%}
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5><a class="text-white h4" href="{%url 'profile'%}">SET UP PROFILE</a></h5>
   
+
+    </div>
+  </div>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>MENU
+       
+      </button>
+      
+      <h5 class="text-white h4">.pro-view</h5>
+      <form class="d-flex" action="{% url 'search_results'%}">
+ 
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search Users" name="users">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    
+      <!-- <li><a href="{%url 'profile'%}">First create profile</a></li> -->
+
+      <button class="btn btn-light" type="submit"><a class="text-dark" href="{%url 'upload'%}">SUBMIT SITE</a></button>
+    </div>
+
+  </nav>
+  {%endif%}
 </body>
 </html>
